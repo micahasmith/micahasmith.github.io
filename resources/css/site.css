@@ -81,6 +81,8 @@ a:hover {
 	margin-bottom: 2em;
 }
 
+.stry .posts li:before{ content:none; left:inherit;}
+.stry .posts li{ text-indent:inherit; margin-left:inherit; }
 
 
 							/*stories*/
