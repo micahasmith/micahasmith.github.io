@@ -1,7 +1,7 @@
 ---
 title: Reflecting on Two Years in a Seed Stage Startup
 layout: post
-excerpt: 
+excerpt: There's no shortage of startup advice out there-- why not add to it?
 ---
 
 # Reflecting on Two Years in a Seed Stage Startup
@@ -10,7 +10,7 @@ I'm officially going on my second year at [Print.io](http://print.io). What a tr
 
 It's crazy. (I've already covered that.) What makes it worse though is the layers of bullshit that surround the startup industry. Reading about startups online is not unlike wading through a sewer, hoping to find some valuable items with the dream of eventually finding a golden latch out.
 
-I would like to spend some time touching on some of the things I've learned. It's gold for me...
+I would like to spend some time touching on some of the things I've learned, more oriented towards engineering-types. It's gold for me...
 
 ### Don't Get Caught Up In "Cool"
 
