@@ -1,0 +1,19 @@
+---
+layout: default
+title: hi! i'm micah smith
+---
+
+<div class="stry">
+<p>Hi! I'm Micah Smith, a Brooklyn-based programmer.</p>
+
+<ul class="posts">
+{% for post in site.posts %}
+    <li>
+        <a class="posts-name" href="{{ site.prefix  }}{{ post.url }}">{{ post.title }}</a>
+        <div class="posts-date">{{ post.date | date: "%B %d, %Y" }}</div>
+        <div class="posts-excerpt">{{ post.excerpt }}</div>
+        
+    </li>
+{% endfor %}
+</ul>
+</div>

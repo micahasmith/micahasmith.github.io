@@ -1,0 +1,10 @@
+name: "all&amp;all"
+description: ""
+
+url: "allampersandall.com"
+
+paginate: 10
+
+markdown: rdiscount
+permalink: pretty
+highlighter: true
