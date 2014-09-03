@@ -12,7 +12,7 @@ I've already read a few clojure books, and done some tutorials online (such as t
 
 ### Intro
 
-Since clojure is a [lisp](http://www.cs.kau.se/cs/education/courses/dvgc01/lectures/Lisp2.pdf), when you're calling a function it always takes the form of `(function-name arg1 arg2 ...)`. Everything is contained within the parenthesis. Anything 
+Since clojure is a [lisp](http://www.cs.kau.se/cs/education/courses/dvgc01/lectures/Lisp2.pdf), when you're calling a function it always takes the form of `(function-name arg1 arg2 ...)`. Everything is contained within the parenthesis. 
 
 To make a comment in code, you begin it with two semicolons `;;`.
 
