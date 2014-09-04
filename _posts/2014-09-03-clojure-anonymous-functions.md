@@ -64,7 +64,7 @@ If you have multiple arguments, then there is a different way of using `%`:
 ( 
    ;; here is the entire function!
    #(str "hello " %1 " " %2) 
-   ;; here is the arg1 to the function
+   ;; here is the arg1 and arg2 to the function
    "micah" "smith"
  ) ;; returns "hello micah smith"
 {% endhighlight %}
