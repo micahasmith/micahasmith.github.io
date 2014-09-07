@@ -35,11 +35,15 @@
 
 <p>Since clojure is a <a href="http://www.cs.kau.se/cs/education/courses/dvgc01/lectures/Lisp2.pdf">lisp</a>, when you're calling a function it always takes the form of <code>(function-name arg1 arg2 ...)</code>. Everything is contained within the parenthesis.</p>
 
-<p>To make a comment in code, you begin it with two semicolons <code>;;</code>.</p>
+<h3>Returning A Value From A Function</h3>
+
+<p>Very important-- the last value/function result is always what is returned from a function.</p>
+
+<p>There is no return type of <code>void</code> in clojure. A function that returns nothing actually returns <code>nil</code>.</p>
 
 <h3>Functions</h3>
 
-<p>One creates functions via <code>defn</code>:</p>
+<p>One creates functions via <code>defn</code>. Note that to make a comment in code, you begin it with two semicolons <code>;;</code>.</p>
 
 <div class="highlight"><pre><code class="language-clj" data-lang="clj"><span class="p">(</span><span class="kd">defn </span><span class="nv">say-hello</span>
   <span class="c1">;; the following means that the function takes a single parameter called &quot;name&quot;</span>
@@ -47,6 +51,7 @@
   <span class="c1">;;    [1 2 3] is an example vector containing those elements</span>
   <span class="p">[</span><span class="nv">name</span><span class="p">]</span>
     <span class="c1">;; str is a function that concatenates strings</span>
+    <span class="c1">;; this gets returned</span>
     <span class="p">(</span><span class="nb">str </span><span class="s">&quot;hello &quot;</span> <span class="nv">name</span><span class="p">)</span>
   <span class="p">)</span>
 

@@ -100,7 +100,11 @@ a:hover {
 	font-weight: 700;
 	font-size:22px;
 }
-
+.stry h4{
+	margin: 1em 0;
+	font-weight: 700;
+	font-size:18px;
+}
 
 .stry h1{
 	margin: 1em 0;

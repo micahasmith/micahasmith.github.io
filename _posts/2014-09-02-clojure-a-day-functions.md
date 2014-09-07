@@ -14,11 +14,19 @@ I've already read a few clojure books, and done some tutorials online (such as t
 
 Since clojure is a [lisp](http://www.cs.kau.se/cs/education/courses/dvgc01/lectures/Lisp2.pdf), when you're calling a function it always takes the form of `(function-name arg1 arg2 ...)`. Everything is contained within the parenthesis. 
 
-To make a comment in code, you begin it with two semicolons `;;`.
+
+
+### Returning A Value From A Function
+
+Very important-- the last value/function result is always what is returned from a function.
+
+There is no return type of `void` in clojure. A function that returns nothing actually returns `nil`.
+
+
 
 ### Functions
 
-One creates functions via `defn`:
+One creates functions via `defn`. Note that to make a comment in code, you begin it with two semicolons `;;`.
 
 {% highlight clj %}
 (defn say-hello
@@ -27,6 +35,7 @@ One creates functions via `defn`:
   ;;    [1 2 3] is an example vector containing those elements
   [name]
     ;; str is a function that concatenates strings
+    ;; this gets returned
     (str "hello " name)
   )
 
@@ -56,6 +65,9 @@ Interestingly there's a built in format for documentation-- I could've written t
 
 I don't know of another language that has that feature off hand-- I like it. 
 
+
+
+
 ### Multiple Arity Functions
 
 This is one of the strangest part of clojure functions for me-- the same function definition can have multiple aritys. (What's the plural of arity?..) This means that you can define a different number of parameters with their own function bodies in the same function definition. 
@@ -82,6 +94,9 @@ To demonstrate, we'll make a new function `say-hello2` that accepts either a who
 (say-hello2 "micah") ;; returns "hello micah"
 (say-hello2 "micah" "smith") ;; returns "hello micah smith"
 {% endhighlight %}
+
+
+
 
 ### End
 
