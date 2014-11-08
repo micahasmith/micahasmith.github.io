@@ -6,7 +6,7 @@ excerpt: Anonymous functions in clojure
 
 # Clojure A Day-- Anonymous Functions
 
-Anonymous functions are one of my favorite language features. I don't think I could work with a language that doesnt have them (here's lookin' at you, java 7).
+Anonymous functions are one of my favorite language features. I don't think I could work with a language that doesn't have them (here's lookin' at you, java 7).
 
 ### The "fn" keyword
 
