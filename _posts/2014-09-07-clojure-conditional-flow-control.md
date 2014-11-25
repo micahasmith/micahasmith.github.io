@@ -1,5 +1,5 @@
 ---
-title: Clojure a Day-- Conditional Flow Control
+title: Clojure A Day-- Conditional Flow Control
 layout: post
 excerpt: Methods for conditional flow control in clojure
 ---
