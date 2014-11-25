@@ -10,11 +10,11 @@ Continuing in learning clojure, today we're going to look at looping constructs.
 
 ### loop/recur
 
-The standard looping constructs in clojure is `loop` and `defer`. It's super easy and does all your fancy tail call optimization stuff.
+The standard looping construct in clojure is `loop` and `defer`. It's super easy and does all your fancy tail call optimization stuff.
 
 The format of `loop` is `(loop [bindings*] exprs*)`; all that means is that it takes a list of variable/value bindings and it has a function body. 
 
-`recur` works hand in hand with `loop`--it passes back into the loop new values for the `loop` body.
+`recur` works hand in hand with `loop`--it passes back into the loop new values for the `loop` binding arguments.
 
 Example:
 
