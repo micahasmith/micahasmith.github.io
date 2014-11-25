@@ -4,9 +4,9 @@ layout: post
 excerpt: Index of all the posts within the "Clojure A Day" series
 ---
 
-# Clojure A Day-- Index
+# Clojure A Day-- An Intro to Clojure
 
-I'm trying to present clojure from a "classic" perspective for those with imperative backgrounds. Hopefully these blogs help you as much as they helped me!
+I'm trying to present clojure from a "classic" perspective for those with imperative backgrounds. Hopefully these articles help you as much as they helped me!
 
 1. [Functions]({% post_url 2014-09-02-clojure-a-day-functions %})
 1. [Anonymous Functions]({% post_url 2014-09-03-clojure-anonymous-functions %})
