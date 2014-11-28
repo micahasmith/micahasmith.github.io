@@ -14,3 +14,4 @@ I'm trying to present clojure from a "classic" perspective for those with impera
 1. [Variables and State]({% post_url 2014-11-09-clojure-variables-and-state %})
 1. [Looping Flow Control]({% post_url 2014-11-24-clojure-flow-control-loops %})
 1. [Error Handling]({% post_url 2014-11-24-clojure-error-handling %})
+1. [Lists]({% post_url 2014-11-27-clojure-lists %})
