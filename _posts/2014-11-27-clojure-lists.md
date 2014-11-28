@@ -11,7 +11,7 @@ Lists are central to clojure as they are to other lisps. If you're not familiar 
 
 
 
-### The List Data Structure
+### The List Data Structure (`first` and `rest`)
 
 {% highlight clojure %}
 ;; make a list
@@ -58,6 +58,8 @@ If you want an element that's deeper into the list, you gotta do the work to get
 {% endhighlight %}
 
 All based on `first` and `rest`! That's just how `list` works. 
+
+So when you think about lists in clojure from here on out, you will only think "`first` and `rest`". Lists in clojure = only `first` and `rest`. Say it a few times. Great.
 
 It's important to know how functions work on empty lists.
 
