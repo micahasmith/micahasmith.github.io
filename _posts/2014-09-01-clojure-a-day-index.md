@@ -17,3 +17,4 @@ I'm trying to present clojure from a "classic" perspective for those with impera
 1. [Lists]({% post_url 2014-11-27-clojure-lists %})
 1. [Vectors]({% post_url 2014-11-28-clojure-vectors %})
 1. [Maps]({% post_url 2014-11-29-clojure-maps %})
+1. [Threading Macros]({% post_url 2014-12-22-clojure-threading-macros %})

@@ -49,7 +49,7 @@ Step by step details of this:
 
 Here we're specifying OS config. Note that there are [possible other siblings](https://coreos.com/docs/cluster-management/setup/cloudinit-cloud-config/#file-format) to this `coreos` section. We'll use some of them later. 
 
-#### etcd
+### coreos -> etcd
 
 In the `etcd` section, we're first configuring our etcd discovery url (something we also discussed in the last post), and then we're using the templating features of cloud-config to substitute in IP addresses. Specifically, the two settings are:
 
@@ -58,7 +58,7 @@ In the `etcd` section, we're first configuring our etcd discovery url (something
 
 These values get transformed into environmental variables on our machine. [Other possible `etcd` config options are laid out here](https://github.com/coreos/etcd/blob/master/Documentation/configuration.md).
 
-#### etcd Security?
+#### Securing etcd?
 
 Is our `etcd` in the cloud-config above secure? Not so much! Let's fix that:
 
@@ -101,7 +101,7 @@ If you didn't get those errors, YAY.
 
 Let's run the etcd-ca tool. Since we built the tool in the last step, let's do `cd bin` in order to get into the build output's directory. 
 
-To run etcd-ca, we do:
+To get the cert files we need out of etcd-ca, we do:
 
 - Run `./etcd-ca init`. It will ask for a password. When this is done, you will have a certificate authority
 - Run `/.etcd-ca new-cert mycert`. It will ask for a password, and when this is done you will have a new host identity. 
@@ -114,9 +114,9 @@ To run etcd-ca, we do:
 
 Copy the five files created from the last step into the directory where you're working on your coreos cluster. If you were running etcd-ca from a vagrant machine, you can exit the machine and `vagrant suspend` it. 
 
-#### Configuring etcd Security
+### Configuring etcd Security
 
-Now that we have our certificates, we can [configure our etcd to be secure](https://github.com/coreos/etcd-ca/blob/master/Documentation/work_with_etcd.md) in our cloud-config. To do so, we need to set the following settings:
+Now that we have our certificates, we can [configure our etcd to be secure](https://github.com/coreos/etcd-ca/blob/master/Documentation/work_with_etcd.md) in our cloud-config. **Note that some of these settings also go in the fleet section as well**. To do so, we need to set the following settings:
 
 - `peer-ca-file` - to ca.crt
 - `peer-cert-file` - to mycert.crt
@@ -145,6 +145,14 @@ coreos:
     peer-key-file: /etc/etcd/mycert.key.insecure
     peer-cert-file: /etc/etcd/mycert.crt
     peer-ca-file: /etc/etcd/ca.crt
+  fleet:
+    public-ip: $public_ipv4
+    #
+    # you have to put the settings in here as well!
+    #
+    etcd-ca-file: /etc/etcd/mycert.pem
+    etcd-keyfile: /etc/etcd/mycert.key.insecure
+    etcd-certfile: /etc/etcd/mycert.crt
 
 {% endhighlight %}
 
@@ -174,6 +182,11 @@ coreos:
     peer-key-file: /etc/etcd/mycert.key.insecure
     peer-cert-file: /etc/etcd/mycert.crt
     peer-ca-file: /etc/etcd/ca.crt
+  fleet:
+    public-ip: $public_ipv4
+    etcd-ca-file: /etc/etcd/mycert.pem
+    etcd-keyfile: /etc/etcd/mycert.key.insecure
+    etcd-certfile: /etc/etcd/mycert.crt
 write_files:
   - path: /etc/etcd/ca.crt
     permissions: 0644
