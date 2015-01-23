@@ -24,9 +24,9 @@ How do we fix this?
 
 Steps to set up rsync:
 
-1. [Download cygwin](https://cygwin.com/install.html)
-2. Be sure to install `rsync` on the cygwin packages selection screen (its under Net)
-3. After install, add the `c:/cygwin64/bin` dir to your PATH
+- [Download cygwin](https://cygwin.com/install.html)
+- Be sure to install `rsync` on the cygwin packages selection screen (its under Net)
+- After install, add the `c:/cygwin64/bin` dir to your PATH
 
 Great! Now that we have rsync installed, let's modify our Vagrantfile to use it-- we're going to go from:
 
