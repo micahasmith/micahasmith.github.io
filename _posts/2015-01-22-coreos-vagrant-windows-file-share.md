@@ -55,3 +55,7 @@ ENV["VAGRANT_DETECTED_OS"] = ENV["VAGRANT_DETECTED_OS"].to_s + " cygwin"
 {% endhighlight %}
 
 Done! Note that I had to restart my PC for it to *entirely* work for me. 
+
+### "Auto Syncing"
+
+To make it automatically sync up, you want to have one shell window open with `vagrant rsync-auto` running, outside of your shell where you're doing `vagrant ssh`. 
