@@ -16,10 +16,9 @@ Usage: docker tag [OPTIONS] IMAGE[:TAG] [REGISTRYHOST/][USERNAME/]NAME[:TAG]
 Tag an image into a repository
 
   -f, --force=false    Force
-core@core-01 ~/share/containers/webapp-test $
 ```
 
-If you're new to docker (as I am), this doesn't make a ton of sense. What's worse, the info for it on the docker website is a mirror of the above. 
+If you're new to docker (as I am) this doesn't make a ton of sense. What's worse, the info for it on the docker website is a mirror of the above. 
 
 ### A Walkthrough
 
@@ -67,16 +66,19 @@ docker build -t micahasmith/webapp-test .
 Note that the reason why i began mine with "micahasmith" is because that's my username on [hub.docker.com](http://hub.docker.com), which is free to sign up for. 
 
 To make sure our new image is up at hub.docker.com, let's push it:
+
 ```
 docker push micahasmith/webapp-test
 ```
 
 Now that we have a working image, we can tag its current state via:
+
 ```
 docker tag micahasmith/webapp-test:latest micahasmith/webapp-test:v0.0.1
 ```
 
 I guess you could describe the command as tagging from a tag to another tag-- the `:latest` suffix makes the "from" the last commit. So in the above we created a "v0.0.1" tag. Let's now push that tag up to the hub:
+
 ```
 docker push micahasmith/webapp-test:v0.0.1
 ```
