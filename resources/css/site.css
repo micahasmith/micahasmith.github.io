@@ -12,6 +12,10 @@ a:hover {
     text-decoration: none;
 }
 
+em {
+	font-style: italic;
+}
+
 
 .l-wrap {
     max-width: 700px;
