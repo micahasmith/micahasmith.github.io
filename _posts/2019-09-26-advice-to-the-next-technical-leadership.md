@@ -4,6 +4,8 @@ layout: post
 excerpt: Notes on decision making as a technical leader
 ---
 
+# Advice to the Next Technical Leadership
+
 Brian asked for example, why I picked RDS for our chartio db. 
 
 Here’s how I think about things:
