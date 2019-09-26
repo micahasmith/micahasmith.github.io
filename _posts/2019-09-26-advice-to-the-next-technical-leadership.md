@@ -39,8 +39,8 @@ We have infrastructure level code in C# and Clojure. By infrastructure level cod
 
 Your job is to place developers in a box where they work on customer problems. If you already have all the infrastructure level code and decisions done, you will get your devs working on customer issues with 99% of their time. So have all the infra-level stuff done and leave them with only the business logic. It’s like only leaving them with the necessary complexity to solve. **Never have weak devs do your infra-level code**. Do it yourself. Make it dead-simple. Again, never trust anyone to build your infra.
 
-So why did i choose RDS? It did everything we needed it to do for years at a cost of less than $100 a month. The cost of hosting my own backed up database was negligible against amazon-managed. There isn’t a cheaper option. The platforms we used to integrate with it were friendly with AWS-based tech (same cloud). Would argue mammoth’s current architecture is a cautionary tale in over engineering for scale we don’t have…. Beware! It’s a trap that’s easy to fall into. 
-
 GT has never had a breaking change in any of its APIs. After you get a client on your platform, don’t make them spend additional time with changes. Achieve this via versioning.
+
+So why did i choose RDS? It did everything we needed it to do for years at a cost of less than $100 a month. The cost of hosting my own backed up database was negligible against amazon-managed. There isn’t a cheaper option. The platforms we used to integrate with it were friendly with AWS-based tech (same cloud). Would argue mammoth’s current architecture is a cautionary tale in over engineering for scale we don’t have…. Beware! It’s a trap that’s easy to fall into. 
 
 Btw, if you’re ever worried about a decision anywhere, hit me on whatsapp. My hourly consulting rate i’m pretty sure brian will be ok with. :beers:
