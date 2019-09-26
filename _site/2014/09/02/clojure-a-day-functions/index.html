@@ -45,18 +45,17 @@
 
 <p>One creates functions via <code>defn</code>. Note that to make a comment in code, you begin it with two semicolons <code>;;</code>.</p>
 
-<div class="highlight"><pre><code class="language-clj" data-lang="clj"><span class="p">(</span><span class="kd">defn </span><span class="nv">say-hello</span>
-  <span class="c1">;; the following means that the function takes a single parameter called &quot;name&quot;</span>
-  <span class="c1">;; the brackets [] designate that parameters form a vector--</span>
-  <span class="c1">;;    [1 2 3] is an example vector containing those elements</span>
-  <span class="p">[</span><span class="nv">name</span><span class="p">]</span>
-    <span class="c1">;; str is a function that concatenates strings</span>
-    <span class="c1">;; this gets returned</span>
-    <span class="p">(</span><span class="nb">str </span><span class="s">&quot;hello &quot;</span> <span class="nv">name</span><span class="p">)</span>
-  <span class="p">)</span>
+<p><figure class="highlight"><pre><code class="language-clj" data-lang="clj"><span class="p">(</span><span class="k">defn</span><span class="w"> </span><span class="n">say-hello</span><span class="w">
+  </span><span class="c1">;; the following means that the function takes a single parameter called "name"</span><span class="w">
+  </span><span class="c1">;; the brackets [] designate that parameters form a vector--</span><span class="w">
+  </span><span class="c1">;;    [1 2 3] is an example vector containing those elements</span><span class="w">
+  </span><span class="p">[</span><span class="nb">name</span><span class="p">]</span><span class="w">
+    </span><span class="c1">;; str is a function that concatenates strings</span><span class="w">
+    </span><span class="c1">;; this gets returned</span><span class="w">
+    </span><span class="p">(</span><span class="nb">str</span><span class="w"> </span><span class="s">"hello "</span><span class="w"> </span><span class="nb">name</span><span class="p">)</span><span class="w">
+  </span><span class="p">)</span><span class="w"></p>
 
-<span class="p">(</span><span class="nf">say-hello</span> <span class="s">&quot;micah&quot;</span><span class="p">)</span> <span class="c1">;; returns &quot;hello micah&quot;</span></code></pre></div>
-
+<p></span><span class="p">(</span><span class="nf">say-hello</span><span class="w"> </span><span class="s">"micah"</span><span class="p">)</span><span class="w"> </span><span class="c1">;; returns "hello micah"</span></code></pre></figure></p>
 
 <p>Notice that even the function to define a function follows the lisp rules.</p>
 
@@ -64,19 +63,18 @@
 
 <p>Interestingly there's a built in format for documentation-- I could've written the above function like so:</p>
 
-<div class="highlight"><pre><code class="language-clj" data-lang="clj"><span class="p">(</span><span class="kd">defn </span><span class="nv">say-hello</span>
-  <span class="c1">;; the following is documentation for the function</span>
-  <span class="s">&quot;say-hello takes a name and returns a friendly greeting&quot;</span>
-  <span class="c1">;; the following means that the function takes a single parameter called &quot;name&quot;</span>
-  <span class="c1">;; the brackets [] designate that parameters form a vector--</span>
-  <span class="c1">;;    [1 2 3] is an example vector containing those elements</span>
-  <span class="p">[</span><span class="nv">name</span><span class="p">]</span>
-    <span class="c1">;; str is a function that concatenates strings</span>
-    <span class="p">(</span><span class="nb">str </span><span class="s">&quot;hello &quot;</span> <span class="nv">name</span><span class="p">)</span>
-  <span class="p">)</span>
+<p><figure class="highlight"><pre><code class="language-clj" data-lang="clj"><span class="p">(</span><span class="k">defn</span><span class="w"> </span><span class="n">say-hello</span><span class="w">
+  </span><span class="c1">;; the following is documentation for the function</span><span class="w">
+  </span><span class="s">"say-hello takes a name and returns a friendly greeting"</span><span class="w">
+  </span><span class="c1">;; the following means that the function takes a single parameter called "name"</span><span class="w">
+  </span><span class="c1">;; the brackets [] designate that parameters form a vector--</span><span class="w">
+  </span><span class="c1">;;    [1 2 3] is an example vector containing those elements</span><span class="w">
+  </span><span class="p">[</span><span class="nb">name</span><span class="p">]</span><span class="w">
+    </span><span class="c1">;; str is a function that concatenates strings</span><span class="w">
+    </span><span class="p">(</span><span class="nb">str</span><span class="w"> </span><span class="s">"hello "</span><span class="w"> </span><span class="nb">name</span><span class="p">)</span><span class="w">
+  </span><span class="p">)</span><span class="w"></p>
 
-<span class="p">(</span><span class="nf">say-hello</span> <span class="s">&quot;micah&quot;</span><span class="p">)</span> <span class="c1">;; returns &quot;hello micah&quot;</span></code></pre></div>
-
+<p></span><span class="p">(</span><span class="nf">say-hello</span><span class="w"> </span><span class="s">"micah"</span><span class="p">)</span><span class="w"> </span><span class="c1">;; returns "hello micah"</span></code></pre></figure></p>
 
 <p>I don't know of another language that has that feature off hand-- I like it.</p>
 
@@ -86,25 +84,26 @@
 
 <p>To demonstrate, we'll make a new function <code>say-hello2</code> that accepts either a whole name or a first name and last name.</p>
 
-<div class="highlight"><pre><code class="language-clj" data-lang="clj"><span class="c1">;; making a new function named say-hello2 here...</span>
-<span class="p">(</span><span class="kd">defn </span><span class="nv">say-hello2</span>
-  <span class="c1">;; the following is documentation for the function</span>
-  <span class="s">&quot;say-hello2 takes a name and returns a friendly greeting&quot;</span>
-  
-      <span class="c1">;; the first way to call say-hello is with one param</span>
-      <span class="p">([</span><span class="nv">name</span><span class="p">]</span>
-        <span class="p">(</span><span class="nb">str </span><span class="s">&quot;hello &quot;</span> <span class="nv">name</span><span class="p">)</span>
-       <span class="p">)</span>
-  
-      <span class="c1">;; the second way to call say-hello is with two params</span>
-      <span class="p">([</span><span class="nv">firstName</span> <span class="nv">lastName</span><span class="p">]</span>
-        <span class="p">(</span><span class="nb">str </span><span class="s">&quot;hello &quot;</span> <span class="nv">firstName</span> <span class="s">&quot; &quot;</span> <span class="nv">lastName</span><span class="p">)</span>
-      <span class="p">)</span>
-  <span class="p">)</span>
+<p><figure class="highlight"><pre><code class="language-clj" data-lang="clj"><span class="c1">;; making a new function named say-hello2 here...</span><span class="w">
+</span><span class="p">(</span><span class="k">defn</span><span class="w"> </span><span class="n">say-hello2</span><span class="w">
+  </span><span class="c1">;; the following is documentation for the function</span><span class="w">
+  </span><span class="s">"say-hello2 takes a name and returns a friendly greeting"</span><span class="w"></p>
 
-<span class="p">(</span><span class="nf">say-hello2</span> <span class="s">&quot;micah&quot;</span><span class="p">)</span> <span class="c1">;; returns &quot;hello micah&quot;</span>
-<span class="p">(</span><span class="nf">say-hello2</span> <span class="s">&quot;micah&quot;</span> <span class="s">&quot;smith&quot;</span><span class="p">)</span> <span class="c1">;; returns &quot;hello micah smith&quot;</span></code></pre></div>
+<pre><code>  &lt;/span&gt;&lt;span class="c1"&gt;;; the first way to call say-hello is with one param&lt;/span&gt;&lt;span class="w"&gt;
+  &lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="nb"&gt;name&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="w"&gt;
+    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"hello "&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;name&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;
+   &lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;
 
+  &lt;/span&gt;&lt;span class="c1"&gt;;; the second way to call say-hello is with two params&lt;/span&gt;&lt;span class="w"&gt;
+  &lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="n"&gt;firstName&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;lastName&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="w"&gt;
+    &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"hello "&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;firstName&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;" "&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;lastName&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;
+  &lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;
+</code></pre>
+
+<p>  </span><span class="p">)</span><span class="w"></p>
+
+<p></span><span class="p">(</span><span class="nf">say-hello2</span><span class="w"> </span><span class="s">"micah"</span><span class="p">)</span><span class="w"> </span><span class="c1">;; returns "hello micah"</span><span class="w">
+</span><span class="p">(</span><span class="nf">say-hello2</span><span class="w"> </span><span class="s">"micah"</span><span class="w"> </span><span class="s">"smith"</span><span class="p">)</span><span class="w"> </span><span class="c1">;; returns "hello micah smith"</span></code></pre></figure></p>
 
 <h3>End</h3>
 

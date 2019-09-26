@@ -12,6 +12,10 @@ a:hover {
     text-decoration: none;
 }
 
+em {
+	font-style: italic;
+}
+
 
 .l-wrap {
     max-width: 700px;
@@ -118,7 +122,7 @@ a:hover {
 }
 
 .stry ul li:before{ content:"-"; position:relative; left:-5px;}
-.stry ul li{ text-indent:-5px; margin-left:10px; }
+.stry ul li{ text-indent:-5px; margin-left:2em; margin-bottom: 1em; }
 
 
 

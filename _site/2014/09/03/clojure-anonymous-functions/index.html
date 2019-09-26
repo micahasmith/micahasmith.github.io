@@ -33,30 +33,27 @@
 
 <p>The first way to go about anonymous functions is via the fn keyword.</p>
 
-<div class="highlight"><pre><code class="language-clojure" data-lang="clojure"><span class="c1">;; different version of our say-hello function from our last lesson</span>
-<span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">name</span><span class="p">]</span> 
-  <span class="p">(</span><span class="nb">str </span><span class="s">&quot;hello &quot;</span> <span class="nv">name</span><span class="p">)</span>
-  <span class="p">)</span></code></pre></div>
-
+<p><figure class="highlight"><pre><code class="language-clojure" data-lang="clojure"><span class="c1">;; different version of our say-hello function from our last lesson</span><span class="w">
+</span><span class="p">(</span><span class="k">fn</span><span class="w"> </span><span class="p">[</span><span class="nb">name</span><span class="p">]</span><span class="w">
+  </span><span class="p">(</span><span class="nb">str</span><span class="w"> </span><span class="s">"hello "</span><span class="w"> </span><span class="nb">name</span><span class="p">)</span><span class="w">
+  </span><span class="p">)</span></code></pre></figure></p>
 
 <p>Since one can call a function with the form <code>(function arg1 arg2 arg3)</code> we could call this function like so:</p>
 
-<div class="highlight"><pre><code class="language-clojure" data-lang="clojure"><span class="c1">;; different version of our say-hello function from our last lesson</span>
-<span class="p">(</span>
-  <span class="c1">;; first we have the function</span>
-  <span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">name</span><span class="p">]</span> 
-    <span class="p">(</span><span class="nb">str </span><span class="s">&quot;hello &quot;</span> <span class="nv">name</span><span class="p">))</span> 
-    <span class="c1">;; here we pass in the first argument</span>
-    <span class="s">&quot;micah&quot;</span>
-  <span class="p">)</span> <span class="c1">;; returns &quot;hello micah&quot;</span></code></pre></div>
-
+<p><figure class="highlight"><pre><code class="language-clojure" data-lang="clojure"><span class="c1">;; different version of our say-hello function from our last lesson</span><span class="w">
+</span><span class="p">(</span><span class="w">
+  </span><span class="c1">;; first we have the function</span><span class="w">
+  </span><span class="p">(</span><span class="k">fn</span><span class="w"> </span><span class="p">[</span><span class="nb">name</span><span class="p">]</span><span class="w">
+    </span><span class="p">(</span><span class="nb">str</span><span class="w"> </span><span class="s">"hello "</span><span class="w"> </span><span class="nb">name</span><span class="p">))</span><span class="w">
+    </span><span class="c1">;; here we pass in the first argument</span><span class="w">
+    </span><span class="s">"micah"</span><span class="w">
+  </span><span class="p">)</span><span class="w"> </span><span class="c1">;; returns "hello micah"</span></code></pre></figure></p>
 
 <p>Kind of like doing the following in JS:</p>
 
-<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">){</span>
-    <span class="k">return</span> <span class="s2">&quot;hello &quot;</span><span class="o">+</span><span class="nx">name</span><span class="p">;</span>
-<span class="p">})(</span><span class="s2">&quot;micah&quot;</span><span class="p">);</span></code></pre></div>
-
+<p><figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">){</span>
+    <span class="k">return</span> <span class="dl">"</span><span class="s2">hello </span><span class="dl">"</span><span class="o">+</span><span class="nx">name</span><span class="p">;</span>
+<span class="p">})(</span><span class="dl">"</span><span class="s2">micah</span><span class="dl">"</span><span class="p">);</span></code></pre></figure></p>
 
 <h3>The % Keyword</h3>
 
@@ -64,25 +61,23 @@
 
 <p>Here's the <code>%</code> based version, note that there are two different ways to use it. Both start with a <code>#</code> at the beginning:</p>
 
-<div class="highlight"><pre><code class="language-clojure" data-lang="clojure"><span class="p">(</span> 
-   <span class="c1">;; here is the entire function!</span>
-   <span class="o">#</span><span class="p">(</span><span class="nb">str </span><span class="s">&quot;hello &quot;</span> <span class="nv">%</span><span class="p">)</span> 
-   <span class="c1">;; here is the arg1 to the function</span>
-   <span class="s">&quot;micah&quot;</span>
- <span class="p">)</span> <span class="c1">;; returns &quot;hello micah&quot;</span></code></pre></div>
-
+<p><figure class="highlight"><pre><code class="language-clojure" data-lang="clojure"><span class="p">(</span><span class="w">
+   </span><span class="c1">;; here is the entire function!</span><span class="w">
+   </span><span class="o">#</span><span class="p">(</span><span class="nb">str</span><span class="w"> </span><span class="s">"hello "</span><span class="w"> </span><span class="n">%</span><span class="p">)</span><span class="w">
+   </span><span class="c1">;; here is the arg1 to the function</span><span class="w">
+   </span><span class="s">"micah"</span><span class="w">
+ </span><span class="p">)</span><span class="w"> </span><span class="c1">;; returns "hello micah"</span></code></pre></figure></p>
 
 <p>So in the above version, <code>%</code> refers to the <strong>one and only argument</strong>.</p>
 
 <p>If you have multiple arguments, then there is a different way of using <code>%</code>:</p>
 
-<div class="highlight"><pre><code class="language-clojure" data-lang="clojure"><span class="p">(</span> 
-   <span class="c1">;; here is the entire function!</span>
-   <span class="o">#</span><span class="p">(</span><span class="nb">str </span><span class="s">&quot;hello &quot;</span> <span class="nv">%1</span> <span class="s">&quot; &quot;</span> <span class="nv">%2</span><span class="p">)</span> 
-   <span class="c1">;; here is the arg1 and arg2 to the function</span>
-   <span class="s">&quot;micah&quot;</span> <span class="s">&quot;smith&quot;</span>
- <span class="p">)</span> <span class="c1">;; returns &quot;hello micah smith&quot;</span></code></pre></div>
-
+<p><figure class="highlight"><pre><code class="language-clojure" data-lang="clojure"><span class="p">(</span><span class="w">
+   </span><span class="c1">;; here is the entire function!</span><span class="w">
+   </span><span class="o">#</span><span class="p">(</span><span class="nb">str</span><span class="w"> </span><span class="s">"hello "</span><span class="w"> </span><span class="n">%1</span><span class="w"> </span><span class="s">" "</span><span class="w"> </span><span class="n">%2</span><span class="p">)</span><span class="w">
+   </span><span class="c1">;; here is the arg1 and arg2 to the function</span><span class="w">
+   </span><span class="s">"micah"</span><span class="w"> </span><span class="s">"smith"</span><span class="w">
+ </span><span class="p">)</span><span class="w"> </span><span class="c1">;; returns "hello micah smith"</span></code></pre></figure></p>
 
 <p>So you can use <code>%[arg number]</code> to reference multiple arguments.</p>
 
